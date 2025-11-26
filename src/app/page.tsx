@@ -4,9 +4,6 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
-  Shield,
-  Clock,
-  Users,
   Star,
   ChevronLeft,
   ChevronRight,
@@ -270,7 +267,6 @@ export default function HomePage() {
                     title: "¡Te entregamos tu iPhone el mismo día!",
                     desc: "Disfruta de tu nuevo celular al instante.",
                   },
-                  
                 ].map((item, index) => (
                   <div key={index} className="flex gap-4">
                     <div className="flex-shrink-0">
@@ -337,7 +333,7 @@ export default function HomePage() {
                     )}
                   </div>
                   <p className="text-xl text-gray-700 mb-4 italic">
-                    "{testimonials[currentTestimonial].text}"
+                    &quot;{testimonials[currentTestimonial].text}&quot;
                   </p>
                   <div>
                     <p className="font-bold text-gray-900">
