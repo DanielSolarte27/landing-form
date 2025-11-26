@@ -19,7 +19,8 @@ import Image from "next/image";
 
 export default function FormularioPage() {
   const [formData, setFormData] = useState<FormData>({
-    producto: "",
+    productoSeminuevo: "",
+    productoNuevo: "",
     nombreCompleto: "",
     cedula: "",
     departamento: "",
@@ -36,11 +37,26 @@ export default function FormularioPage() {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === "productoSeminuevo" && value !== "") {
+      setFormData((prev) => ({ ...prev, [name]: value, productoNuevo: "" }));
+    } else if (name === "productoNuevo" && value !== "") {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+        productoSeminuevo: "",
+      }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.productoSeminuevo && !formData.productoNuevo) {
+      alert("⚠️ Por favor selecciona un producto (Seminuevo o Nuevo)");
+      return;
+    }
     setIsSubmitting(true);
 
     // Enviar a WhatsApp
@@ -52,7 +68,8 @@ export default function FormularioPage() {
     // Resetear formulario después de 2 segundos
     setTimeout(() => {
       setFormData({
-        producto: "",
+        productoSeminuevo: "",
+        productoNuevo: "",
         nombreCompleto: "",
         cedula: "",
         departamento: "",
@@ -172,96 +189,96 @@ export default function FormularioPage() {
                     SEMINUEVOS *
                   </label>
                   <select
-                    name="producto"
-                    value={formData.producto}
+                    name="productoSeminuevo"
+                    value={formData.productoSeminuevo || ""}
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-gray-800 bg-white"
                   >
                     <option value="">Selecciona un producto</option>
-                    <option value="Crédito Personal">iPhone 11 - 64GB</option>
-                    <option value="Crédito Empresarial">
+                    <option value="iPhone 11 - 64GB">iPhone 11 - 64GB</option>
+                    <option value="iPhone 11 - 128GB">
                       iPhone 11 - 128GB
                     </option>
-                    <option value="Crédito de Vehículo">
+                    <option value="iPhone 11 - 256GB">
                       iPhone 11 - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 12 - 64GB">
                       iPhone 12 - 64GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 12 - 128GB">
                       iPhone 12 - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 12 - 256GB">
                       iPhone 12 - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 12 Pro - 128GB">
                       iPhone 12 Pro - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 12 Pro - 256GB">
                       iPhone 12 Pro - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 12 Pro Max - 128GB">
                       iPhone 12 Pro Max - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 12 Pro Max - 256GB">
                       iPhone 12 Pro Max - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 13 - 128GB">
                       iPhone 13 - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 13 - 256GB">
                       iPhone 13 - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 13 Pro - 128GB">
                       iPhone 13 Pro - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 13 Pro - 256GB">
                       iPhone 13 Pro - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 13 Pro Max - 128GB">
                       iPhone 13 Pro Max - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 13 Pro Max - 256GB">
                       iPhone 13 Pro Max - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 14 - 128GB">
                       iPhone 14 - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 14 - 256GB">
                       iPhone 14 - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 14 Pro - 128GB">
                       iPhone 14 Pro - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 14 Pro - 256GB">
                       iPhone 14 Pro - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 14 Pro Max - 128GB">
                       iPhone 14 Pro Max - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 14 Pro Max - 256GB">
                       iPhone 14 Pro Max - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 15 - 128GB">
                       iPhone 15 - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 15 - 256GB">
                       iPhone 15 - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 15 Plus - 128GB">
                       iPhone 15 Plus - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 15 Plus - 256GB">
                       iPhone 15 Plus - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 15 Pro - 128GB">
                       iPhone 15 Pro - 128GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 15 Pro - 256GB">
                       iPhone 15 Pro - 256GB
                     </option>
-                    <option value="Crédito Hipotecario">
+                    <option value="iPhone 15 Pro Max - 256GB">
                       iPhone 15 Pro Max - 256GB
                     </option>
                   </select>
@@ -274,16 +291,14 @@ export default function FormularioPage() {
                   </label>
                   <select
                     name="productoNuevo"
-                    value={formData.producto || ""}
+                    value={formData.productoNuevo || ""}
                     onChange={handleChange}
                     className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition text-gray-800 bg-white"
                   >
                     <option value="">Selecciona un producto</option>
                     <option value="iPhone 11 - 128GB">iPhone 11 - 128GB</option>
                     <option value="iPhone 12 - 128GB">iPhone 12 - 128GB</option>
-                    <option value="iPhone 13 - 128GB">
-                      iPhone 13 - 128GB
-                    </option>
+                    <option value="iPhone 13 - 128GB">iPhone 13 - 128GB</option>
                   </select>
                 </div>
               </div>

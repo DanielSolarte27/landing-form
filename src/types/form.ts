@@ -1,5 +1,6 @@
 export interface FormData {
-  producto: string;
+  productoNuevo: string;
+  productoSeminuevo: string;
   nombreCompleto: string;
   cedula: string;
   departamento: string;

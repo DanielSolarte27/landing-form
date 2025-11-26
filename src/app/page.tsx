@@ -122,7 +122,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section
         id="inicio"
-        className="pt-24 pb-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50"
+        className="pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -159,7 +159,7 @@ export default function HomePage() {
                   Ver Requisitos
                 </button>
               </div>
-              <div className="flex items-center gap-8 pt-4">
+              {/* <div className="flex items-center gap-8 pt-4">
                 <div>
                   <p className="text-3xl font-bold text-gray-900">+5,000</p>
                   <p className="text-gray-600">Clientes Satisfechos</p>
@@ -169,7 +169,7 @@ export default function HomePage() {
                   <p className="text-3xl font-bold text-gray-900">4.9/5</p>
                   <p className="text-gray-600">Calificación</p>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full blur-3xl opacity-20"></div>
