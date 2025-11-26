@@ -321,8 +321,8 @@ export default function HomePage() {
             <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <Image
-                  src="/celular.jpeg"
-                  alt="Cliente Testimonial"
+                 src={testimonials[currentTestimonial].image}
+                  alt={testimonials[currentTestimonial].name}
                   width={96}
                   height={96}
                   className="w-24 h-24 rounded-full"
