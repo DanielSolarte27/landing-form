@@ -173,9 +173,11 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full blur-3xl opacity-20"></div>
-              <img
-                src="celular.jpeg"
+              <Image
+                 src="/celular.jpeg"
                 alt="Personas trabajando"
+                width={600}
+                height={600}
                 className="relative rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
@@ -292,9 +294,11 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="relative">
-              <img
-                src="celular.jpeg"
+             <Image
+                src="/celular.jpeg"
                 alt="Dashboard"
+                width={600}
+                height={600}
                 className="rounded-2xl shadow-2xl"
               />
             </div>
@@ -316,9 +320,11 @@ export default function HomePage() {
           <div className="relative max-w-4xl mx-auto">
             <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl">
               <div className="flex flex-col md:flex-row items-center gap-8">
-                <img
+                <Image
                   src={testimonials[currentTestimonial].image}
                   alt={testimonials[currentTestimonial].name}
+                  width={96}
+                  height={96}
                   className="w-24 h-24 rounded-full"
                 />
                 <div className="flex-1 text-center md:text-left">
