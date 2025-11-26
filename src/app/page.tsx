@@ -293,7 +293,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                src="celular.jpeg"
                 alt="Dashboard"
                 className="rounded-2xl shadow-2xl"
               />
