@@ -159,17 +159,6 @@ export default function HomePage() {
                   Ver Requisitos
                 </button>
               </div>
-              {/* <div className="flex items-center gap-8 pt-4">
-                <div>
-                  <p className="text-3xl font-bold text-gray-900">+5,000</p>
-                  <p className="text-gray-600">Clientes Satisfechos</p>
-                </div>
-                <div className="h-12 w-px bg-gray-300"></div>
-                <div>
-                  <p className="text-3xl font-bold text-gray-900">4.9/5</p>
-                  <p className="text-gray-600">Calificación</p>
-                </div>
-              </div> */}
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full blur-3xl opacity-20"></div>
@@ -321,7 +310,7 @@ export default function HomePage() {
             <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <Image
-                 src={testimonials[currentTestimonial].image}
+                  src={testimonials[currentTestimonial].image}
                   alt={testimonials[currentTestimonial].name}
                   width={96}
                   height={96}
