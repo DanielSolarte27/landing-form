@@ -31,16 +31,6 @@ export default function HeroVideoSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full blur-3xl opacity-20"></div>
       
       <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-gray-900">
-        {!isVideoLoaded && (
-          <Image
-            src="/celular.jpeg"
-            alt="Vista previa de celulares"
-            width={600}
-            height={600}
-            className="w-full h-auto"
-            priority
-          />
-        )}
         
         {/* Video optimizado */}
         <video
