@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import HeroVideoSection from "./components/HeroVideoSection";
 
 export default function HomePage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -162,13 +163,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full blur-3xl opacity-20"></div>
-              <Image
-                 src="/celular.jpeg"
-                alt="Personas trabajando"
-                width={600}
-                height={600}
-                className="relative rounded-2xl shadow-2xl"
-              />
+              <HeroVideoSection />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
                 <div className="flex items-center gap-4">
                   <div className="bg-green-100 p-3 rounded-full">
@@ -190,7 +185,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section id="requisitos" className="py-20 bg-white">
+      <section id="requisitos" className="py-20 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -222,75 +217,6 @@ export default function HomePage() {
                 </button> */}
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section
-        id="beneficios"
-        className="py-20 bg-gradient-to-br from-blue-600 to-indigo-700 text-white"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6">
-                Proceso Simple y Seguro
-              </h2>
-              <p className="text-xl text-blue-100 mb-8">
-                En solo 3 pasos puedes obtener tu crédito de manera
-                completamente digital
-              </p>
-              <div className="space-y-6">
-                {[
-                  {
-                    step: "1",
-                    title: "Realiza tu estudio de crédito",
-                    desc: "Llena el formulario y en minutos un asesor validará tu información.",
-                  },
-                  {
-                    step: "2",
-                    title: "Una vez aprobado, acércate a nuestra tienda",
-                    desc: "Presentas tu cédula y llevas el 30% de cuota inicial.",
-                  },
-                  {
-                    step: "3",
-                    title: "¡Te entregamos tu iPhone el mismo día!",
-                    desc: "Disfruta de tu nuevo celular al instante.",
-                  },
-                ].map((item, index) => (
-                  <div key={index} className="flex gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-2xl font-bold">
-                        {item.step}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-semibold mb-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-blue-100">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <Link
-                href="/formulario"
-                className="inline-flex items-center mt-8 bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all transform hover:scale-105"
-              >
-                Comenzar Ahora
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </div>
-            <div className="relative">
-             <Image
-                src="/celular.jpeg"
-                alt="Dashboard"
-                width={600}
-                height={600}
-                className="rounded-2xl shadow-2xl"
-              />
-            </div>
           </div>
         </div>
       </section>
